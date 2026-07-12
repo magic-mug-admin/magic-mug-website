@@ -1,7 +1,7 @@
-/* ==========================================
+/* ==========================================================
    MAGIC MUG
    BAR & RESTAURANT
-========================================== */
+========================================================== */
 
 *{
     margin:0;
@@ -11,30 +11,40 @@
 
 :root{
 
-    --bg:#050505;
-    --text:#f5f5f5;
-    --gold:#D4AF37;
-    --grey:#b5b5b5;
+    --bg:#090909;
+    --gold:#d4af37;
+    --gold-light:#f6d878;
+    --white:#f6f6f6;
+    --grey:#b7b7b7;
+    --glass:rgba(255,255,255,.04);
 
 }
 
 html{
+
     scroll-behavior:smooth;
+
 }
 
 body{
 
     background:var(--bg);
-    color:var(--text);
-    font-family:'Inter',sans-serif;
 
-    overflow-x:hidden;
+    color:var(--white);
+
+    font-family:"Inter",sans-serif;
+
+    overflow:hidden;
+
+    width:100%;
+
+    height:100vh;
 
 }
 
-/* ==========================
-   Animated Background
-========================== */
+/* ===========================
+        BACKGROUND
+=========================== */
 
 .background{
 
@@ -44,416 +54,97 @@ body{
 
     overflow:hidden;
 
-    z-index:-10;
+    background:#090909;
 
-    background:#050505;
+    z-index:-20;
 
 }
 
-.gradient{
+/* ===========================
+      MOVING WAVES
+=========================== */
+
+.wave{
 
     position:absolute;
 
-    width:800px;
-    height:800px;
+    width:140%;
 
-    border-radius:50%;
+    height:140%;
 
-    filter:blur(180px);
+    border-radius:45%;
 
-    opacity:.12;
+    filter:blur(80px);
 
-}
+    opacity:.22;
 
-.gradient1{
-
-    background:white;
-
-    left:-250px;
-    top:-250px;
-
-    animation:leftMove 18s ease-in-out infinite alternate;
+    mix-blend-mode:screen;
 
 }
 
-.gradient2{
+.wave1{
 
-    background:#ffffff;
+    background:
+    radial-gradient(circle,
+    rgba(255,255,255,.22) 0%,
+    transparent 65%);
 
-    right:-250px;
-    bottom:-250px;
+    top:-35%;
 
-    animation:rightMove 22s ease-in-out infinite alternate;
+    left:-25%;
 
-}
-
-@keyframes leftMove{
-
-    from{
-
-        transform:translate(0,0);
-
-    }
-
-    to{
-
-        transform:translate(180px,120px);
-
-    }
+    animation:waveOne 22s ease-in-out infinite alternate;
 
 }
 
-@keyframes rightMove{
+.wave2{
 
-    from{
+    background:
+    radial-gradient(circle,
+    rgba(255,255,255,.16) 0%,
+    transparent 65%);
 
-        transform:translate(0,0);
+    bottom:-35%;
 
-    }
+    right:-20%;
 
-    to{
-
-        transform:translate(-180px,-120px);
-
-    }
+    animation:waveTwo 28s ease-in-out infinite alternate;
 
 }
 
-.noise{
+.wave3{
+
+    background:
+    radial-gradient(circle,
+    rgba(255,255,255,.08) 0%,
+    transparent 65%);
+
+    top:15%;
+
+    left:20%;
+
+    animation:waveThree 32s ease-in-out infinite alternate;
+
+}
+
+/* ===========================
+      PARTICLES
+=========================== */
+
+.particles{
 
     position:absolute;
 
     inset:0;
 
-    opacity:.03;
+    opacity:.08;
 
     background-image:
-    radial-gradient(circle,#fff 1px,transparent 1px);
 
-    background-size:6px 6px;
+    radial-gradient(circle,#ffffff 1px,transparent 1px);
 
-}
+    background-size:8px 8px;
 
-/* ==========================
-   Hero
-========================== */
-
-.hero{
-
-    min-height:100vh;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    text-align:center;
-
-    padding:70px 20px;
-
-}
-
-.content{
-
-    width:100%;
-
-    max-width:900px;
-
-    animation:fadeUp 1.3s ease;
-
-}
-
-/* ==========================
- Typography
-========================== */
-
-.subtitle{
-
-    display:block;
-
-    color:var(--gold);
-
-    letter-spacing:8px;
-
-    font-size:.9rem;
-
-    margin-bottom:20px;
-
-}
-
-h1{
-
-    font-family:'Cinzel',serif;
-
-    font-size:clamp(3rem,7vw,5.8rem);
-
-    font-weight:700;
-
-    letter-spacing:5px;
-
-    line-height:1.1;
-
-}
-
-.divider{
-
-    width:120px;
-
-    height:2px;
-
-    background:var(--gold);
-
-    margin:30px auto;
-
-}
-
-.tagline{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:18px;
-
-    flex-wrap:wrap;
-
-    font-size:1.2rem;
-
-    margin-bottom:50px;
-
-}
-
-/* ==========================
- Info
-========================== */
-
-.info{
-
-    margin-bottom:45px;
-
-}
-
-.info h2{
-
-    font-size:1.6rem;
-
-    margin-bottom:10px;
-
-}
-
-.info p{
-
-    color:var(--gold);
-
-    font-size:1.2rem;
-
-}
-
-/* ==========================
- Launch
-========================== */
-
-.launch{
-
-    margin-bottom:40px;
-
-}
-
-.launch span{
-
-    display:block;
-
-    font-size:1.3rem;
-
-    font-weight:700;
-
-    letter-spacing:8px;
-
-}
-
-/* ==========================
- Message
-========================== */
-
-.message{
-
-    max-width:650px;
-
-    margin:auto;
-
-    color:var(--grey);
-
-    font-size:1.1rem;
-
-    line-height:1.9;
-
-    margin-bottom:55px;
-
-}
-
-/* ==========================
- Buttons
-========================== */
-
-.buttons{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:18px;
-
-    flex-wrap:wrap;
-
-}
-
-.btn{
-
-    min-width:170px;
-
-    padding:16px 30px;
-
-    border-radius:50px;
-
-    text-decoration:none;
-
-    font-weight:600;
-
-    transition:.35s;
-
-}
-
-.primary{
-
-    background:var(--gold);
-
-    color:#111;
-
-}
-
-.primary:hover{
-
-    transform:translateY(-4px);
-
-    box-shadow:0 15px 35px rgba(212,175,55,.3);
-
-}
-
-.secondary{
-
-    border:1px solid var(--gold);
-
-    color:white;
-
-}
-
-.secondary:hover{
-
-    background:var(--gold);
-
-    color:#111;
-
-}
-
-/* ==========================
- Footer
-========================== */
-
-footer{
-
-    text-align:center;
-
-    padding:40px 20px;
-
-    color:#777;
-
-    font-size:.9rem;
-
-}
-
-/* ==========================
- Animation
-========================== */
-
-@keyframes fadeUp{
-
-    from{
-
-        opacity:0;
-
-        transform:translateY(35px);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:translateY(0);
-
-    }
-
-}
-
-/* ==========================
- Mobile
-========================== */
-
-@media(max-width:768px){
-
-    .hero{
-
-        padding:50px 20px;
-
-    }
-
-    h1{
-
-        letter-spacing:2px;
-
-    }
-
-    .tagline{
-
-        flex-direction:column;
-
-        gap:10px;
-
-    }
-
-    .info h2{
-
-        font-size:1.3rem;
-
-    }
-
-    .launch span{
-
-        letter-spacing:4px;
-
-        font-size:1.1rem;
-
-    }
-
-    .message{
-
-        font-size:1rem;
-
-    }
-
-    .buttons{
-
-        flex-direction:column;
-
-        align-items:center;
-
-    }
-
-    .btn{
-
-        width:240px;
-
-    }
+    animation:particlesMove 50s linear infinite;
 
 }
