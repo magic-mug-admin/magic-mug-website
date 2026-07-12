@@ -1,174 +1,397 @@
+/* ===========================
+   MAGIC MUG
+   BAR & RESTAURANT
+=========================== */
+
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+
+    --bg:#050505;
+    --white:#F4F4F4;
+    --gold:#D4AF37;
+    --grey:#A5A5A5;
+
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
 
-height:100vh;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-background:
-
-linear-gradient(rgba(0,0,0,.65),
-rgba(0,0,0,.65)),
-
-url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1800&q=80");
-
-background-size:cover;
-
-background-position:center;
-
-font-family:Poppins,sans-serif;
-
-overflow:hidden;
-
-color:white;
+    background:#050505;
+    color:var(--white);
+    font-family:'Inter',sans-serif;
+    overflow:hidden;
+    position:relative;
+    min-height:100vh;
 
 }
 
-.overlay{
+/* ======================
+   BACKGROUND
+====================== */
 
-position:absolute;
+.background{
 
-width:100%;
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    z-index:-10;
 
-height:100%;
+}
 
-backdrop-filter:blur(2px);
+.gradient{
+
+    position:absolute;
+    width:700px;
+    height:700px;
+
+    border-radius:50%;
+
+    filter:blur(160px);
+
+    opacity:.18;
+
+    animation:moveGradient 18s ease-in-out infinite alternate;
+
+}
+
+.gradient1{
+
+    background:#ffffff;
+
+    top:-220px;
+    left:-200px;
+
+}
+
+.gradient2{
+
+    background:#d9d9d9;
+
+    bottom:-250px;
+    right:-180px;
+
+    animation-duration:25s;
+
+}
+
+@keyframes moveGradient{
+
+    0%{
+
+        transform:translate(0,0) scale(1);
+
+    }
+
+    50%{
+
+        transform:translate(80px,-60px) scale(1.15);
+
+    }
+
+    100%{
+
+        transform:translate(-80px,80px) scale(.9);
+
+    }
+
+}
+
+/* ======================
+ HERO
+====================== */
+
+.hero{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    height:100vh;
+
+    text-align:center;
+
+    padding:20px;
 
 }
 
 .content{
 
-position:relative;
+    max-width:820px;
 
-z-index:2;
+    animation:fadeUp 1.3s ease;
 
-text-align:center;
+}
 
-animation:fade 2s;
+.subtitle{
 
-padding:20px;
+    color:var(--gold);
+
+    letter-spacing:8px;
+
+    font-size:.85rem;
+
+    display:block;
+
+    margin-bottom:20px;
 
 }
 
 h1{
 
-font-family:Cinzel,serif;
+    font-family:'Cinzel',serif;
 
-font-size:72px;
+    font-size:clamp(3.8rem,8vw,7rem);
 
-letter-spacing:6px;
-
-margin-bottom:20px;
-
-}
-
-.tagline{
-
-font-size:22px;
-
-opacity:.85;
+    letter-spacing:10px;
 
 }
 
 .divider{
 
-width:120px;
+    width:120px;
 
-height:2px;
+    height:2px;
 
-background:#d4af37;
+    background:var(--gold);
 
-margin:35px auto;
-
-}
-
-.coming{
-
-font-size:34px;
-
-letter-spacing:8px;
-
-text-transform:uppercase;
-
-margin-bottom:40px;
-
-}
-
-.btn{
-
-padding:16px 38px;
-
-border:2px solid #d4af37;
-
-background:transparent;
-
-color:white;
-
-font-size:16px;
-
-cursor:pointer;
-
-transition:.4s;
-
-}
-
-.btn:hover{
-
-background:#d4af37;
-
-color:black;
-
-}
-
-@keyframes fade{
-
-from{
-
-opacity:0;
-
-transform:translateY(30px);
-
-}
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-}
-
-@media(max-width:768px){
-
-h1{
-
-font-size:46px;
+    margin:30px auto;
 
 }
 
 .tagline{
 
-font-size:18px;
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    font-size:1.15rem;
+
+    color:#EAEAEA;
+
+    margin-bottom:45px;
 
 }
 
-.coming{
+.info h2{
 
-font-size:24px;
+    font-size:1.3rem;
 
-letter-spacing:5px;
+    font-weight:500;
 
 }
+
+.info p{
+
+    color:var(--gold);
+
+    margin-top:10px;
+
+    margin-bottom:40px;
+
+}
+
+.launch{
+
+    margin-bottom:35px;
+
+}
+
+.launch span{
+
+    display:block;
+
+    font-size:1.15rem;
+
+    letter-spacing:7px;
+
+    font-weight:700;
+
+}
+
+.message{
+
+    color:var(--grey);
+
+    max-width:620px;
+
+    margin:auto;
+
+    line-height:1.8;
+
+    margin-bottom:45px;
+
+}
+
+/* ======================
+ BUTTONS
+====================== */
+
+.buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+}
+
+.btn{
+
+    padding:14px 30px;
+
+    border-radius:40px;
+
+    text-decoration:none;
+
+    transition:.35s;
+
+    font-weight:500;
+
+}
+
+.primary{
+
+    background:var(--gold);
+
+    color:#111;
+
+}
+
+.primary:hover{
+
+    transform:translateY(-4px);
+
+}
+
+.secondary{
+
+    border:1px solid var(--gold);
+
+    color:white;
+
+}
+
+.secondary:hover{
+
+    background:var(--gold);
+
+    color:#111;
+
+}
+
+/* ======================
+ FOOTER
+====================== */
+
+footer{
+
+    position:fixed;
+
+    bottom:25px;
+
+    width:100%;
+
+    text-align:center;
+
+    color:#777;
+
+    font-size:.85rem;
+
+}
+
+/* ======================
+ ANIMATION
+====================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(35px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ======================
+ MOBILE
+====================== */
+
+@media(max-width:768px){
+
+    body{
+
+        overflow:auto;
+
+    }
+
+    h1{
+
+        letter-spacing:5px;
+
+    }
+
+    .tagline{
+
+        flex-direction:column;
+
+        gap:8px;
+
+    }
+
+    .launch span{
+
+        letter-spacing:4px;
+
+        font-size:1rem;
+
+    }
+
+    .buttons{
+
+        flex-direction:column;
+
+    }
+
+    .btn{
+
+        width:240px;
+
+        margin:auto;
+
+    }
+
+    footer{
+
+        position:relative;
+
+        margin:40px 0;
+
+    }
 
 }
