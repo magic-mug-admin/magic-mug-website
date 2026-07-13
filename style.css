@@ -399,3 +399,293 @@ h1{
     margin-bottom:60px;
 
 }
+
+/* ==========================================================
+   BUTTONS
+========================================================== */
+
+.buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+    margin-bottom:18px;
+
+}
+
+.social{
+
+    margin-top:10px;
+
+}
+
+.buttons a{
+
+    min-width:170px;
+
+    padding:15px 28px;
+
+    border:1px solid rgba(212,175,55,.35);
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.04);
+
+    backdrop-filter:blur(12px);
+
+    color:var(--white);
+
+    text-decoration:none;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+    font-size:.95rem;
+
+    transition:.35s ease;
+
+}
+
+.buttons a i{
+
+    color:var(--gold);
+
+    transition:.35s;
+
+}
+
+.buttons a:hover{
+
+    background:rgba(212,175,55,.12);
+
+    border-color:var(--gold);
+
+    transform:translateY(-4px);
+
+    box-shadow:
+
+    0 0 20px rgba(212,175,55,.18);
+
+}
+
+.buttons a:hover i{
+
+    transform:scale(1.15);
+
+}
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+footer{
+
+    position:fixed;
+
+    bottom:20px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    color:#777;
+
+    font-size:.85rem;
+
+    letter-spacing:2px;
+
+}
+
+/* ==========================================================
+   ANIMATIONS
+========================================================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes waveOne{
+
+    0%{
+
+        transform:translate(0,0) rotate(0deg) scale(1);
+
+    }
+
+    100%{
+
+        transform:translate(120px,-70px) rotate(25deg) scale(1.15);
+
+    }
+
+}
+
+@keyframes waveTwo{
+
+    0%{
+
+        transform:translate(0,0) rotate(0deg);
+
+    }
+
+    100%{
+
+        transform:translate(-150px,90px) rotate(-25deg);
+
+    }
+
+}
+
+@keyframes waveThree{
+
+    0%{
+
+        transform:translate(0,0);
+
+    }
+
+    100%{
+
+        transform:translate(70px,-110px);
+
+    }
+
+}
+
+@keyframes particlesMove{
+
+    from{
+
+        transform:translateY(0);
+
+    }
+
+    to{
+
+        transform:translateY(-300px);
+
+    }
+
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media(max-width:900px){
+
+    body{
+
+        overflow:auto;
+
+    }
+
+    .hero{
+
+        height:auto;
+
+        min-height:100vh;
+
+        padding:80px 25px;
+
+    }
+
+    h1{
+
+        letter-spacing:3px;
+
+        font-size:clamp(3rem,12vw,5rem);
+
+    }
+
+    .tagline{
+
+        flex-direction:column;
+
+        gap:10px;
+
+    }
+
+    .tagline .line{
+
+        display:none;
+
+    }
+
+    .since h2{
+
+        font-size:1.4rem;
+
+    }
+
+    .launch h3{
+
+        font-size:2rem;
+
+        letter-spacing:4px;
+
+    }
+
+    .description{
+
+        font-size:1rem;
+
+        line-height:1.8;
+
+    }
+
+    .buttons{
+
+        flex-direction:column;
+
+    }
+
+    .buttons a{
+
+        width:260px;
+
+    }
+
+    footer{
+
+        position:relative;
+
+        left:auto;
+
+        bottom:auto;
+
+        transform:none;
+
+        margin:40px 0 20px;
+
+    }
+
+}
